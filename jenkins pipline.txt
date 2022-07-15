@@ -1,0 +1,32 @@
+**Create a pipline Job and 
+
+-- Advance Project output ->Pipline -> Script -
+
+node() {
+
+	stage('Code Checkout'){
+	--pipleine syntaxs here
+	eg - 	 checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'GithubCreds', url: 'https://github.com/adeeb0407/MavenBuild.git']]]
+	}
+	
+	stage('Build Automation'){
+
+	}
+
+	stage('Archive Artifacts'){
+		
+	}
+	
+	stage('Code Review'){
+		
+	}
+	
+	stage('Deployment'){
+		
+	}	
+	
+	stage('Notification'){
+		
+	}
+}
+

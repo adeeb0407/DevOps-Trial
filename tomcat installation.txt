@@ -1,0 +1,26 @@
+TOMCAT9 installation
+
+REF --- https://linuxhint.com/install_apache_tomcat_server_ubuntu/
+
+-EC2 install with t2.small configuration (or any 2GB ram and 2 cores CPU)
+
+
+sudo su -
+apt install update
+apt install default-jdk unzip
+apt install tomcat9 tomcat9-admin
+
+go to the puclic url with port 8080 eg -- http://43.204.220.81:8080 png- tomcat9.png
+
+now to got ti manager webapp (tomcat9-admin) commands as follow for password and username
+
+cd /etc/tomcat9/
+vi tomcat-users.xml
+*******add this***** 
+<role rolename="manager-gui"/>
+<user username="tomcat" password="pass" roles="admin-gui,manager-gui"/>
+
+password - pass
+user - tomcat
+
+

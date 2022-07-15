@@ -1,0 +1,25 @@
+persnal access token (from git)
+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
+
+Build Triggers --
+
+**build periodically - CRON format (can use CRON generator)
+ MINUTE	Minutes within the hour (0–59)
+HOUR	The hour of the day (0–23)
+DOM	The day of the month (1–31)
+MONTH	The month (1–12)
+DOW	The day of the week (0–7) where 0 and 7 are Sunday.
+
+eg - 00 08 05 07 02 (8am on 5th month)
+
+eg - for regular builds use - 00 08 * * * (8am everyday)
+
+eg - for very 2 mins use - */2 * * * *
+
+
+**Poll SCM -- Makes a build if any changes have been seen accorindg to the CORN format...
+
+** git webhooks -- 
+
+Token Jenkins for git webhook --(from jenkins)
+113HB7cL3qbPyufJAxC1v76j1PSJxcBnEa

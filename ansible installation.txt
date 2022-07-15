@@ -1,0 +1,68 @@
+***********ANSIBLE INSTALLATION
+(apt remove --purge anisble) - to remove ansible or any software installed
+
+sudo su -
+apt update
+apt install ansible
+
+-------Primary config file for anisble
+cd /etc/ansible
+vi ansible.cfg
+
+vi hosts -- info of the servers to be managed with anisble (vi /etc/ansible/hosts)
+
+------------------------------------------------------------------
+# This is the default ansible 'hosts' file.
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+green.example.com
+blue.example.com
+#192.168.100.1
+#192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group (grouped hosts)
+
+[webservers]
+13.232.105.33
+192.168.1.110
+
+[webservers:vars]
+ansible_user = ubuntu
+ansible_ssh_private_key_file = /etc/ansible/Smartle.pem
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+#www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+[dbservers]
+
+db01.intranet.mydomain.net
+db02.intranet.mydomain.net
+10.25.1.56
+10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+#db-[99:101]-node.example.com
+
+--------------------------------------------------------
+([All of this is working in cd /etc/anisble])
+
+vi Smartle.pem -- (Paste the Smartle.pem file data Inside and save)
+
+chmod 400 Smartle.pem - (to avoid the file to be overwritten - will give evver whenm using ping module with anisble stating "file to open")
+
+ansible -m ping webservers -- (webservers is the inventory we are trying to ping with module ping (-m = module and ping = module name) )
+
+anisble -m shell -a "hostname" webservers - (get the shell to perform the commands to upadte the VM machines)
+
+anisble -m shell -a "sudo apt update && sudo apt -y install dos2unix" webservers - (all the VM machines in the group webservers will run the commands is quotes - [hint use suo su - first and you have to not use sudo in every && command ])
+
+
+
+

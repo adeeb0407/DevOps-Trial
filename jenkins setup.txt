@@ -1,0 +1,22 @@
+//set up for jenkin
+sudp apt update
+
+sudo su - (get to root)
+
+jenkins webiste to setup ginkins installation -- https://pkg.jenkins.io/debian-stable/
+
+browser -- use public ip from AWS and add port 8080 and use it as a URL to use jenkins -- http://13.127.209.167:8080/ ( for this ec2 seurity group should be accepting 8080 port or all)
+
+use link on the http://13.127.209.167:8080/ to get the password and paste it in the jenkins -- (cat var/jenkins/secrets/initialAdminPassword)
+
+select suggested plugics such as -- pipline folders -- img in folder
+
+username - admin
+pass - smartleadmin
+
+-----------------------Reinstallation -------------------
+
+apt-remove --purge jenkins
+apt -y install jenkins
+
+Repeat the process above
